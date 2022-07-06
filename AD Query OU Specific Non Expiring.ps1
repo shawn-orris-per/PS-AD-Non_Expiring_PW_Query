@@ -1,0 +1,3 @@
+﻿get-aduser -filter * -SearchBase 'OU=ServiceAccounts,DC=******,DC=*****' -properties Name, PasswordNeverExpires, PasswordLastSet, LastLogonDate, AccountLockoutTime, LastBadPasswordAttempt, BadPwdCount, LockedOut, Description | 
+Select-Object DistinguishedName,Name,PasswordNeverExpires,PasswordLastSet,LastLogonDate,Enabled,AccountLockoutTime,LastBadPasswordAttempt,BadPwdCount,LockedOut,Description |
+Export-csv D:\ou_ad_pw_never_expires.csv -NoTypeInformation -Append
